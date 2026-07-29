@@ -34,12 +34,9 @@ The code base contains end-to-end Python scripts for climate data preprocessing,
 
 ## Usage Instructions
 
-### 1. Repository Setup
-Clone the repository and navigate into the root directory:
-
-```bash
-git clone [https://github.com/markogrebovic/innovative-reference-year.git](https://github.com/markogrebovic/innovative-reference-year.git)
-cd innovative-reference-year
+### 1. Repository Access
+Access the following repository and navigate into the root directory:
+https://github.com/markogrebovic/innovative-reference-year.git
 
 ### 2. Raw Data Access
 Each dataset in clean NOAA GSOD form is available on following locations:
