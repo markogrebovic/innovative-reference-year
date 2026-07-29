@@ -32,14 +32,67 @@ The code base contains end-to-end Python scripts for climate data preprocessing,
   * Input & Output sequences: 365 time steps (predicting a full annual cycle).
 * **Thermal Assessment Module:** Dynamic heat transfer matrix formulation according to EN ISO 13786 and EN ISO 52016-1 for calculating $Q_h$ (heating) and $Q_c$ (cooling) flux densities.
 
-## Repository Setup
+## Usage Instructions
 
+### 1. Repository Setup
 Clone the repository and navigate into the root directory:
 
 ```bash
 git clone [https://github.com/markogrebovic/innovative-reference-year.git](https://github.com/markogrebovic/innovative-reference-year.git)
 cd innovative-reference-year
 
+### 2. Raw Data Access
+Each dataset in clean NOAA GSOD form is available on following locations:
+* pg/pg.csv – Podgorica
+* nk/nk.csv – Nikšić
+* br/br.csv – Bar
+* pv/pv.csv – Pljevlja
+
+### 3. Data Preprocessing 
+The statistical benchmark scripts to clean NOAA GSOD input files, unit conversions to metric, feature engineering, and perform historical mean imputations are available for each dataset: 
+* pg/datapg.ipynb – Podgorica
+* nk/datank.ipynb – Nikšić
+* br/databr.ipynb – Bar
+* pv/datapv.ipynb – Pljevlja
+
+Resulting datasets are available within following files:
+* pg/pgfinal.csv – Podgorica
+* nk/nkfinal.csv – Nikšić
+* br/brfinal.csv – Bar
+* pv/pvfinal.csv – Pljevlja
+
+### 4. FS Reference Year Generation
+Short-term and long-term Cumulative Distribution Functions (CDFs) are calculated to select 12 representative historical months based on temperature, humidity, and wind speed ranking. Pipeline for constructing the EN ISO 15927-4 FS reference datasets are available within next files:
+* pg/refyearpg.ipynb – Podgorica
+* nk/refyearnk.ipynb – Nikšić
+* br/refyearbr.ipynb – Bar
+* pv/refyearpv.ipynb – Pljevlja
+
+Resulting datasets are available within following files:
+* pg/rypg.csv – Podgorica
+* nk/rynk.csv – Nikšić
+* br/rybr.csv – Bar
+* pv/rypv.csv – Pljevlja
+
+### 5. Training & Evaluating Deep Sequence Models
+Pipeline for training the (hybrid) deep sequence models and evaluate daily mean temperature predictions against 2024 test data:
+* pg/rnnpg.ipynb – Podgorica
+* nk/rnnnk.ipynb – Nikšić
+* br/rnnbr.ipynb – Bar
+* pv/rnnpv.ipynb – Pljevlja
+
+### 6. Dynamic Building Thermal Simulation (EN ISO 13786)
+Scripts for calculating dynamic heat flow rate densities ($Q_h$ and $Q_c$) across the multi-layer exterior wall using predictions from both FS and DL generated sets are contained in following files:
+* pg/calpg.ipynb – Podgorica
+* nk/calnk.ipynb – Nikšić
+* br/calbr.ipynb – Bar
+* pv/calpv.ipynb – Pljevlja
+
+Resulting datasets are available within following files:
+* pg/qpg.csv – Podgorica
+* nk/qnk.csv – Nikšić
+* br/qbr.csv – Bar
+* pv/qpv.csv – Pljevlja
 
 ## Requirements
 The project relies on Python 3.8+ and standard scientific/deep learning packages:
