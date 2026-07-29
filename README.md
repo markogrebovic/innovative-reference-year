@@ -32,13 +32,14 @@ The code base contains end-to-end Python scripts for climate data preprocessing,
   * Input & Output sequences: 365 time steps (predicting a full annual cycle).
 * **Thermal Assessment Module:** Dynamic heat transfer matrix formulation according to EN ISO 13786 and EN ISO 52016-1 for calculating $Q_h$ (heating) and $Q_c$ (cooling) flux densities.
 
-### Repository Setup
+## Repository Setup
 
 Clone the repository and navigate into the root directory:
 
 ```bash
 git clone [https://github.com/markogrebovic/innovative-reference-year.git](https://github.com/markogrebovic/innovative-reference-year.git)
 cd innovative-reference-year
+
 
 ## Requirements
 The project relies on Python 3.8+ and standard scientific/deep learning packages:
