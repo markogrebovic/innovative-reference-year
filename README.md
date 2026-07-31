@@ -92,13 +92,13 @@ Resulting datasets are available within following files:
 * pv/qpv.csv – Pljevlja
 
 ## Requirements
-The project relies on Python 3.8+ and standard scientific/deep learning packages:
+The project relies on Python 3.12 and standard scientific/deep learning packages:
 
 ```bash
-numpy>=1.21.0
-pandas>=1.3.0
-scipy>=1.7.0
-matplotlib>=3.4.0
-seaborn>=0.11.0
-tensorflow>=2.8.0
-scikit-learn>=0.24.0
+numpy>=2.3.5
+pandas>=2.2.3
+scipy>=1.17.0
+matplotlib>=3.10.0
+seaborn>=0.13.2
+tensorflow>=2.16.0
+scikit-learn>=1.8.0
